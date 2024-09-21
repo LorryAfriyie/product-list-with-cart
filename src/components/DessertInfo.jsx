@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 export function DesertInfo({ name, category, price }) {
   return (
     <div className="desert-info">

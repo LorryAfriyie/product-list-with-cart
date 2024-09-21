@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { DesertImage } from "./DessertImage";
-import { DesertInfo } from "./DessertInfo";
+
+import { DessertCard } from "./DessertCard";
 
 export function DessertGrid() {
   const [jsonData, getJsonData] = useState([]);
@@ -27,18 +27,23 @@ export function DessertGrid() {
   }, []);
 
   return (
-    <>
+    <div className="dessert-grid">
       <h1>Dessert</h1>
       {jsonData.length === 0 && <p>No dessert data available</p>}
-
-      {jsonData.map((x, index) => {
-        return (
-          <div className="desert-container" key={index}>
-            <DesertImage image={x.image} />
-            <DesertInfo name={x.name} category={x.category} price={x.price} />
-          </div>
-        );
-      })}
-    </>
+      
+      <div className="dessert-container">
+        {jsonData.map((x, index) => {
+          return (
+            <DessertCard
+              image={x.image}
+              name={x.name}
+              category={x.category}
+              price={x.price}
+              key={index}
+            />
+          );
+        })}
+      </div>
+    </div>
   );
 }

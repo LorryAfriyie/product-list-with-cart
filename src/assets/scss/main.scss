@@ -1,4 +1,9 @@
 @use "app";
+@use "DessertGrid";
+@use "DessertInfo";
+@use "DessertImage";
+
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap");
 
 :root {
   --clr-red: hsl(14, 86%, 42%);
@@ -10,6 +15,12 @@
   --rose-400: hsl(7, 20%, 60%);
   --rose-500: hsl(12, 20%, 44%);
   --rose-900: hsl(14, 65%, 9%);
+
+  --body-font-weight: 16px;
+
+  --font-weight: 400;
+  --font-weight: 600;
+  --font-weight: 700;
 }
 
 * {
@@ -21,4 +32,6 @@ body {
   padding: 0;
   min-height: 100vh;
   background-color: var(--rose-100);
+  font-size: var(--body-font-weight);
+  font-family: "Red Hat Text", sans-serif;
 }
