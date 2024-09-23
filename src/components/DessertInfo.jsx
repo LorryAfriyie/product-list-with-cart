@@ -1,10 +1,10 @@
 /* eslint-disable react/prop-types */
 export function DesertInfo({ name, category, price }) {
   return (
-    <div className="desert-info">
-      <p>{name}</p>
-      <p>{category}</p>
-      <p>{price}</p>
+    <div className="dessert-info">
+      <p className="dessert-info__category">{category}</p>
+      <p className="dessert-info__name">{name}</p>
+      <p className="dessert-info__price">{price}</p>
     </div>
   );
 }

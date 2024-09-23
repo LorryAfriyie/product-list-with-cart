@@ -5,9 +5,5 @@ export function DesertImage({ image }) {
   useEffect(() => {
     console.log(image.desktop);
   });
-  return (
-    <div className="desert-image">
-      <img src={image.desktop} alt={image.desktop} srcset="" />
-    </div>
-  );
+  return <img src={image.desktop} alt={image.desktop} srcset="" />;
 }

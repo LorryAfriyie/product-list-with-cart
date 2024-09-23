@@ -28,7 +28,7 @@ export function DessertGrid() {
 
   return (
     <div className="dessert-grid">
-      <h1>Dessert</h1>
+      <h1>Desserts</h1>
       {jsonData.length === 0 && <p>No dessert data available</p>}
       
       <div className="dessert-container">
