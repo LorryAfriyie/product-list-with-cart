@@ -1,0 +1,39 @@
+.cart-btn-container {
+  text-align: center;
+
+  .cart-btn {
+    font-weight: 600;
+    position: relative;
+
+    top: -1.25rem;
+    border: 1px solid var(--clr-red);
+    outline: none;
+    width: 9rem;
+    padding: 0.5rem 0 0.5rem 0;
+    border-radius: 20px;
+
+    .icon,
+    .text {
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    .increment,
+    .decrement,
+    .num-of-item {
+      
+    }
+
+    .icon {
+      margin-right: 0.5rem;
+    }
+
+    .num-of-item {
+      color: var(--rose-50);
+    }
+  }
+
+  .cart-btn:hover {
+    color: var(--clr-red);
+  }
+}

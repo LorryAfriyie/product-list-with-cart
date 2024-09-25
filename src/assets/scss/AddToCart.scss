@@ -1,0 +1,17 @@
+.cart {
+  &__container {
+    padding: 0.5rem 1rem 1rem 1rem;
+    background-color: var(--rose-50);
+    border-radius: 10px;
+
+    p {
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--rose-500);
+    }
+  }
+
+  &__heading {
+    color: var(--clr-red);
+  }
+}

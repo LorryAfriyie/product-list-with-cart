@@ -2,6 +2,8 @@
 @use "DessertGrid";
 @use "DessertInfo";
 @use "DessertImage";
+@use "AddToCart";
+@use "Button";
 
 @import url("https://fonts.googleapis.com/css2?family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap");
 
@@ -18,9 +20,9 @@
 
   --body-font-weight: 16px;
 
-  --font-weight: 400;
-  --font-weight: 600;
-  --font-weight: 700;
+  --font-weight-400: 400;
+  --font-weight-600: 600;
+  --font-weight-700: 700;
 }
 
 * {

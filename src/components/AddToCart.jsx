@@ -1,13 +1,15 @@
+import emptyCart from "../assets/images/illustration-empty-cart.svg";
+
 export function AddToCart() {
   return (
-    <div className="add-to-cart">
-      <h1>Cart</h1>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus
-        commodi magnam vel eius neque magni quis, tempora voluptas rem
-        architecto reprehenderit unde? Magni blanditiis culpa sit at, odit aut
-        nemo.
-      </p>
+    <div className="cart">
+      <div className="cart__container">
+        <h2 className="cart__heading">Your Cart</h2>
+
+        <img src={emptyCart} alt="" className="empty-cart" />
+
+        <p>Your added items will appear here</p>
+      </div>
     </div>
   );
 }
