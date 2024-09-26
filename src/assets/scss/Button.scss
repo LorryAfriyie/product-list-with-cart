@@ -18,10 +18,32 @@
       vertical-align: middle;
     }
 
-    .increment,
-    .decrement,
-    .num-of-item {
-      
+    .quantity-control {
+      display: flex;
+      justify-content: space-between;
+      padding-left: 0.7rem;
+      padding-right: 0.7rem;
+      align-items: center;
+
+      .decrement,
+      .increment {
+        border: 1px solid var(--rose-50);
+        border-radius: 50%;
+        height: 16px;
+        width: 16px;
+        display: grid;
+        place-items: center;
+      }
+
+      .decrement:hover,
+      .increment:hover {
+        background-color: var(--rose-50);
+      }
+
+      img {
+        margin: auto;
+        display: block;
+      }
     }
 
     .icon {
