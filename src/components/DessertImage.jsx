@@ -1,12 +1,6 @@
 /* eslint-disable react/prop-types */
-import { useEffect } from "react";
 
 export function DesertImage({ image }) {
-  useEffect(() => {
-    console.log(`Desktop: ${image.desktop}`);
-    console.log(`Tablet: ${image.tablet}`);
-    console.log(`Mobile: ${image.mobile}`);
-  });
   return (
     <>
       <picture>

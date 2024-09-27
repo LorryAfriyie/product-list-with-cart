@@ -1,27 +1,32 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import cart from "../assets/images/icon-add-to-cart.svg";
 import increase from "../assets/images/icon-increment-quantity.svg";
 import decrease from "../assets/images/icon-decrement-quantity.svg";
 
-function AddToCartBtn({quantity, setQuantity}) {
+function AddToCartBtn({ quantity, handleQuantity, handleIsSubmit }) {
   const [numOfItem, setNumOfItem] = useState(false);
-  // const [quantity, setQuantity] = useState(0);
 
   const button = useRef(null);
 
   function increaseQuantity() {
-    setQuantity((prev) => prev + 1);
+    handleQuantity((prev) => prev + 1);
   }
 
   function decreaseQuantity() {
-    setQuantity((prev) => prev - 1);
+    handleQuantity((prev) => prev - 1);
   }
 
   function test() {
     setNumOfItem(true);
-
     button.current.style.backgroundColor = "var(--clr-red)";
   }
+
+  useEffect(() => {
+    button.current.addEventListener("click", () => {
+      handleIsSubmit(true);
+    });
+  });
+
   return (
     <div className="cart-btn-container">
       <button className="cart-btn" onClick={test} ref={button}>
