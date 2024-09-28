@@ -13,11 +13,11 @@ export function DessertGrid() {
       },
     })
       .then(function (res) {
-        console.log(res);
+        //console.log(res);
         return res.json();
       })
       .then(function (res) {
-        console.log(res);
+        //console.log(res);
         getJsonData(res);
       });
   }
