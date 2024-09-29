@@ -3,23 +3,22 @@ import cart from "../assets/images/icon-add-to-cart.svg";
 import increase from "../assets/images/icon-increment-quantity.svg";
 import decrease from "../assets/images/icon-decrement-quantity.svg";
 
-function AddToCartBtn({ handleQuantity, handleIsSubmit }) {
+function AddToCartBtn({ handleQuantity, handleIsSubmit, quantity }) {
   const [numOfItem, setNumOfItem] = useState(false);
-  const [quantityCounter, setQuantityCounter] = useState(0);
 
   const button = useRef(null);
 
   function increaseQuantity() {
-    setQuantityCounter((prev) => prev + 1);
-    handleQuantity(quantityCounter);
+    handleQuantity((prev) => prev + 1);
   }
 
   function decreaseQuantity() {
-    if (quantityCounter === 0) return;
+    handleQuantity((prev) => prev - 1);
+    /* if (quantityCounter === 0) return;
     else {
       setQuantityCounter((prev) => prev - 1);
       handleQuantity(quantityCounter);
-    }
+    } */
   }
 
   function test() {
@@ -42,7 +41,7 @@ function AddToCartBtn({ handleQuantity, handleIsSubmit }) {
               <img src={decrease} alt={decrease} />
             </span>
 
-            <span className="num-of-item">{quantityCounter}</span>
+            <span className="num-of-item">{quantity}</span>
 
             <span className="increment" onClick={increaseQuantity}>
               <img src={increase} alt={increase} />

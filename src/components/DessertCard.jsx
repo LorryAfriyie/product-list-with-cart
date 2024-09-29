@@ -23,16 +23,25 @@ export function DessertCard({ image, name, category, price }) {
 
   useEffect(() => {
     if (isSubmit) {
-      console.log(`${name} ${quantity}`);
+      //console.log(`${name} ${quantity}`);
+      setDessertData({
+        name: name,
+        category: category,
+        price: price,
+        quantity: quantity,
+      });
     }
-  }, [isSubmit, name, quantity]);
+  }, [isSubmit, name, quantity, category, price]);
 
   return (
     <div className="dessert-card">
+      <p>{isSubmit ? "1" : "0"}</p>
+      <p>{dessertData.quantity}</p>
       <DesertImage image={image} />
       <AddToCartBtn
         handleQuantity={handleQuantity}
         handleIsSubmit={handleIsSubmit}
+        quantity={quantity}
       />
       <DesertInfo name={name} category={category} price={price} />
     </div>
