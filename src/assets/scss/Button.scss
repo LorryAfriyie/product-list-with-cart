@@ -4,9 +4,8 @@
   .cart-btn {
     font-weight: 600;
     position: relative;
-
     top: -1.25rem;
-    border: 1px solid var(--clr-red);
+    border: 1px solid var(--rose-400);
     outline: none;
     width: 9rem;
     padding: 0.5rem 0 0.5rem 0;
@@ -57,5 +56,6 @@
 
   .cart-btn:hover {
     color: var(--clr-red);
+    border: 1px solid var(--clr-red);
   }
 }

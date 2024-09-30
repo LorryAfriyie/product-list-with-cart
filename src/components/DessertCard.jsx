@@ -1,7 +1,7 @@
 import { DesertInfo } from "./DessertInfo";
 import { DesertImage } from "./DessertImage";
 import { AddToCartBtn } from "./button";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 export function DessertCard({ image, name, category, price }) {
   const [quantity, setQuantity] = useState(0);
@@ -12,6 +12,8 @@ export function DessertCard({ image, name, category, price }) {
     price: "",
     quantity: 0,
   });
+
+  const imageBorder = useRef(null);
 
   function handleQuantity(data) {
     setQuantity(data);
@@ -35,13 +37,14 @@ export function DessertCard({ image, name, category, price }) {
 
   return (
     <div className="dessert-card">
-      <p>{isSubmit ? "1" : "0"}</p>
-      <p>{dessertData.quantity}</p>
-      <DesertImage image={image} />
+     {/*  <p>{isSubmit ? "1" : "0"}</p>
+      <p>{dessertData.quantity}</p> */}
+      <DesertImage image={image} ref={imageBorder} />
       <AddToCartBtn
         handleQuantity={handleQuantity}
         handleIsSubmit={handleIsSubmit}
         quantity={quantity}
+        ref={imageBorder}
       />
       <DesertInfo name={name} category={category} price={price} />
     </div>
