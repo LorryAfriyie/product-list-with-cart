@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 import { DessertCard } from "./DessertCard";
 
-export function DessertGrid() {
+export function DessertGrid({ handleDessertData }) {
   const [jsonData, getJsonData] = useState([]);
 
   function getData() {
@@ -40,6 +40,8 @@ export function DessertGrid() {
                 name={x.name}
                 category={x.category}
                 price={x.price}
+                dessert={handleDessertData}
+                id={index + 1}
               />
             </div>
           );

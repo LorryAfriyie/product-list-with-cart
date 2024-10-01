@@ -9,16 +9,11 @@ function AddToCartBtn({ handleQuantity, handleIsSubmit, quantity }) {
   const button = useRef(null);
 
   function increaseQuantity() {
-    handleQuantity((prev) => prev + 1);
+    if (quantity >= 0) handleQuantity((prev) => prev + 1);
   }
 
   function decreaseQuantity() {
-    handleQuantity((prev) => prev - 1);
-    /* if (quantityCounter === 0) return;
-    else {
-      setQuantityCounter((prev) => prev - 1);
-      handleQuantity(quantityCounter);
-    } */
+    if (quantity != 0) handleQuantity((prev) => prev - 1);
   }
 
   function test() {
