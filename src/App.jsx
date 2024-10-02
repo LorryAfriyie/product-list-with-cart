@@ -20,19 +20,24 @@ function App() {
     dessertQuantity,
     id,
   ) {
-    setData(
-      data.map((x) => {
-        if (x.id === id) return { ...data, quantity: dessertQuantity };
-        else
-          return {
-            ...data,
-            name: dessertName,
-            category: dessertCategory,
-            price: dessertPrice,
-            quantity: dessertQuantity,
-          };
-      }),
-    );
+    setData([
+      ...data,
+      {
+        name: dessertName,
+        category: dessertCategory,
+        price: dessertPrice,
+        quantity: dessertQuantity,
+        id: id,
+      },
+    ]);
+  }
+
+  function increaseQuantity(data) {
+    
+  }
+
+  function decreaseQuantity(data) {
+
   }
 
   useEffect(() => {
