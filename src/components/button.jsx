@@ -22,17 +22,19 @@ function AddToCartBtn({ handleQuantity, handleIsSubmit, quantity }) {
   }
 
   useEffect(() => {
-    button.current.addEventListener("click", () => {
+    /* button.current.addEventListener("click", () => {
       handleIsSubmit(true);
-    });
+      console.log("clicked");
+      button.current.disabled = true;
+    }); */
   });
 
   return (
     <div className="cart-btn-container">
-      <button className="cart-btn" onClick={test} ref={button}>
-        {numOfItem ? (
+      {numOfItem ? (
+        <button className="cart-btn">
           <div className="quantity-control">
-            <span className="decrement" onClick={decreaseQuantity}>
+            <span className="decrement" onClick={decreaseQuantity} id="wow">
               <img src={decrease} alt={decrease} />
             </span>
 
@@ -42,15 +44,15 @@ function AddToCartBtn({ handleQuantity, handleIsSubmit, quantity }) {
               <img src={increase} alt={increase} />
             </span>
           </div>
-        ) : (
-          <>
-            <span className="icon">
-              <img src={cart} alt={cart} />
-            </span>
-            <span className="text">Add to cart</span>
-          </>
-        )}
-      </button>
+        </button>
+      ) : (
+        <button className="cart-btn" onClick={test} ref={button}>
+          <span className="icon">
+            <img src={cart} alt={cart} />
+          </span>
+          <span className="text">Add to cart</span>
+        </button>
+      )}
     </div>
   );
 }

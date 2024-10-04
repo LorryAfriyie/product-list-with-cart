@@ -3,12 +3,21 @@ import { DesertImage } from "./DessertImage";
 import { AddToCartBtn } from "./Button";
 import { useState, useEffect } from "react";
 
-export function DessertCard({ image, name, category, price, dessert, id }) {
+export function DessertCard({
+  image,
+  name,
+  category,
+  price,
+  dessert,
+  id,
+  changes,
+}) {
   const [quantity, setQuantity] = useState(0);
   const [isSubmit, setIsSubmit] = useState(false);
 
   function handleQuantity(data) {
     setQuantity(data);
+    changes(quantity, id);
   }
 
   function handleIsSubmit(data) {

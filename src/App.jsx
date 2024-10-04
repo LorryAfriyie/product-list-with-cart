@@ -32,13 +32,16 @@ function App() {
     ]);
   }
 
-  function increaseQuantity(data) {
-    
+  function handleQuantityChanges(data2, id) {
+    setData(
+      data2.map((x) => {
+        if (x.id === id) return console.log(data2);
+        else return x;
+      }),
+    );
   }
 
-  function decreaseQuantity(data) {
-
-  }
+  function decreaseQuantity(data) {}
 
   useEffect(() => {
     console.log(data);
@@ -46,7 +49,10 @@ function App() {
 
   return (
     <div className="app">
-      <DessertGrid handleDessertData={handleDessertData} />
+      <DessertGrid
+        handleDessertData={handleDessertData}
+        quantityChanges={handleQuantityChanges}
+      />
       <AddToCart dessert={data} />
     </div>
   );
