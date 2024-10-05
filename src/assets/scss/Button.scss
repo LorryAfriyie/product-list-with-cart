@@ -1,4 +1,6 @@
 .cart-btn-container {
+  display: grid;
+  place-content: center;
   text-align: center;
 
   .cart-btn {

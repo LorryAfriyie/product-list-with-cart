@@ -1,6 +1,6 @@
 import { DesertInfo } from "./DessertInfo";
 import { DesertImage } from "./DessertImage";
-import { AddToCartBtn } from "./Button";
+import { AddToCartBtn, QuantityButton } from "./Button";
 import { useState, useEffect } from "react";
 
 export function DessertCard({
@@ -17,7 +17,7 @@ export function DessertCard({
 
   function handleQuantity(data) {
     setQuantity(data);
-    changes(quantity, id);
+    //changes(quantity, id);
   }
 
   function handleIsSubmit(data) {
@@ -33,11 +33,13 @@ export function DessertCard({
   return (
     <div className="dessert-card">
       <DesertImage image={image} />
-      <AddToCartBtn
-        handleQuantity={handleQuantity}
-        handleIsSubmit={handleIsSubmit}
-        quantity={quantity}
-      />
+      {isSubmit ? (
+        <QuantityButton quantity={quantity} handleQuantity={handleQuantity} />
+      ) : (
+        <AddToCartBtn
+          handleIsSubmit={handleIsSubmit}
+        />
+      )}
       <DesertInfo name={name} category={category} price={price} />
     </div>
   );

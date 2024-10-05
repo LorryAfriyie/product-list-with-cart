@@ -1,13 +1,28 @@
-import { useState, useRef, useEffect } from "react";
+import { useRef, useEffect } from "react";
 import cart from "../assets/images/icon-add-to-cart.svg";
 import increase from "../assets/images/icon-increment-quantity.svg";
 import decrease from "../assets/images/icon-decrement-quantity.svg";
 
-function AddToCartBtn({ handleQuantity, handleIsSubmit, quantity }) {
-  const [numOfItem, setNumOfItem] = useState(false);
-
+function AddToCartBtn({ handleIsSubmit }) {
   const button = useRef(null);
 
+  function test() {
+    handleIsSubmit(true);
+  }
+
+  return (
+    <div className="cart-btn-container">
+      <button className="cart-btn" onClick={test} ref={button}>
+        <span className="icon">
+          <img src={cart} alt={cart} />
+        </span>
+        <span className="text">Add to cart</span>
+      </button>
+    </div>
+  );
+}
+
+function QuantityButton({ quantity, handleQuantity }) {
   function increaseQuantity() {
     if (quantity >= 0) handleQuantity((prev) => prev + 1);
   }
@@ -16,45 +31,29 @@ function AddToCartBtn({ handleQuantity, handleIsSubmit, quantity }) {
     if (quantity != 0) handleQuantity((prev) => prev - 1);
   }
 
-  function test() {
-    setNumOfItem(true);
-    button.current.style.backgroundColor = "var(--clr-red)";
-  }
+  const quantityBtn = useRef(null);
 
   useEffect(() => {
-    /* button.current.addEventListener("click", () => {
-      handleIsSubmit(true);
-      console.log("clicked");
-      button.current.disabled = true;
-    }); */
+    quantityBtn.current.style.backgroundColor = "var(--clr-red)";
   });
 
   return (
     <div className="cart-btn-container">
-      {numOfItem ? (
-        <button className="cart-btn">
-          <div className="quantity-control">
-            <span className="decrement" onClick={decreaseQuantity} id="wow">
-              <img src={decrease} alt={decrease} />
-            </span>
-
-            <span className="num-of-item">{quantity}</span>
-
-            <span className="increment" onClick={increaseQuantity}>
-              <img src={increase} alt={increase} />
-            </span>
-          </div>
-        </button>
-      ) : (
-        <button className="cart-btn" onClick={test} ref={button}>
-          <span className="icon">
-            <img src={cart} alt={cart} />
+      <div className="cart-btn" ref={quantityBtn}>
+        <div className="quantity-control">
+          <span className="decrement" onClick={decreaseQuantity} id="wow">
+            <img src={decrease} alt={decrease} />
           </span>
-          <span className="text">Add to cart</span>
-        </button>
-      )}
+
+          <span className="num-of-item">{quantity}</span>
+
+          <span className="increment" onClick={increaseQuantity}>
+            <img src={increase} alt={increase} />
+          </span>
+        </div>
+      </div>
     </div>
   );
 }
 
-export { AddToCartBtn };
+export { AddToCartBtn, QuantityButton };
