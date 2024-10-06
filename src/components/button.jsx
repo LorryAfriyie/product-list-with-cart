@@ -41,15 +41,15 @@ function QuantityButton({ quantity, handleQuantity }) {
     <div className="cart-btn-container">
       <div className="cart-btn" ref={quantityBtn}>
         <div className="quantity-control">
-          <span className="decrement" onClick={decreaseQuantity} id="wow">
+          <button className="decrement" onClick={decreaseQuantity} id="wow">
             <img src={decrease} alt={decrease} />
-          </span>
+          </button>
 
           <span className="num-of-item">{quantity}</span>
 
-          <span className="increment" onClick={increaseQuantity}>
+          <button className="increment" onClick={increaseQuantity}>
             <img src={increase} alt={increase} />
-          </span>
+          </button>
         </div>
       </div>
     </div>

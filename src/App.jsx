@@ -32,10 +32,10 @@ function App() {
     ]);
   }
 
-  function handleQuantityChanges(data2, id) {
+  function handleQuantityChanges(quantity, id) {
     setData(
-      data2.map((x) => {
-        if (x.id === id) return console.log(data2);
+      data.map((x) => {
+        if (x.id === id) return { ...x, quantity: quantity };
         else return x;
       }),
     );

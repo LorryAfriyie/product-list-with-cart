@@ -17,7 +17,8 @@ export function DessertCard({
 
   function handleQuantity(data) {
     setQuantity(data);
-    //changes(quantity, id);
+    console.log(id);
+    changes(quantity, id);
   }
 
   function handleIsSubmit(data) {
@@ -36,9 +37,7 @@ export function DessertCard({
       {isSubmit ? (
         <QuantityButton quantity={quantity} handleQuantity={handleQuantity} />
       ) : (
-        <AddToCartBtn
-          handleIsSubmit={handleIsSubmit}
-        />
+        <AddToCartBtn handleIsSubmit={handleIsSubmit} />
       )}
       <DesertInfo name={name} category={category} price={price} />
     </div>
