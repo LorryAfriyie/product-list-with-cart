@@ -1,6 +1,7 @@
-import { DessertGrid } from "./components/DessertGrid";
-import { AddToCart } from "./components/AddToCart";
+import { DessertGrid } from "./pages/DessertGrid";
+import { AddToCart } from "./pages/AddToCart";
 import { useEffect, useState } from "react";
+import { ShoppingCartProvider } from "./context/ShoppingCartContext";
 
 function App() {
   const [data, setData] = useState([
@@ -32,29 +33,15 @@ function App() {
     ]);
   }
 
-  function handleQuantityChanges(quantity, id) {
-    setData(
-      data.map((x) => {
-        if (x.id === id) return { ...x, quantity: quantity };
-        else return x;
-      }),
-    );
-  }
-
-  function decreaseQuantity(data) {}
-
-  useEffect(() => {
-    console.log(data);
-  });
-
   return (
-    <div className="app">
-      <DessertGrid
-        handleDessertData={handleDessertData}
-        quantityChanges={handleQuantityChanges}
-      />
-      <AddToCart dessert={data} />
-    </div>
+    <ShoppingCartProvider>
+      <div className="app">
+        <DessertGrid
+          handleDessertData={handleDessertData}
+        />
+        <AddToCart />
+      </div>
+    </ShoppingCartProvider>
   );
 }
 

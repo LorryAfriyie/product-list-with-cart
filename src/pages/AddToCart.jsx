@@ -1,6 +1,8 @@
 import emptyCart from "../assets/images/illustration-empty-cart.svg";
+import { useShoppingCart } from "../context/ShoppingCartContext";
 
-export function AddToCart({ dessert }) {
+export function AddToCart() {
+  const { cartItems } = useShoppingCart();
   return (
     <div className="cart">
       <div className="cart__container">
@@ -10,12 +12,10 @@ export function AddToCart({ dessert }) {
 
         <p>Your added items will appear here</p>
 
-        {dessert.map((x, index) => {
-          return (
-            <div key={index}>
-              <p>{x.name + " " + x.quantity}</p>
-            </div>
-          );
+        {cartItems.map((items) => {
+          <div key={items.id}>
+            <p>{items.name + " " + items.quantity}</p>
+          </div>;
         })}
       </div>
     </div>
