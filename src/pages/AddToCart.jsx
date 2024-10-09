@@ -14,7 +14,7 @@ export function AddToCart() {
 
         {cartItems.map((items) => {
           <div key={items.id}>
-            <p>{items.name + " " + items.quantity}</p>
+            <p>{items.name + " " + items.id}</p>
           </div>;
         })}
       </div>

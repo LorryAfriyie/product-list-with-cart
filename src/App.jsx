@@ -1,6 +1,6 @@
 import { DessertGrid } from "./pages/DessertGrid";
 import { AddToCart } from "./pages/AddToCart";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { ShoppingCartProvider } from "./context/ShoppingCartContext";
 
 function App() {
@@ -34,14 +34,12 @@ function App() {
   }
 
   return (
-    <ShoppingCartProvider>
-      <div className="app">
-        <DessertGrid
-          handleDessertData={handleDessertData}
-        />
+    <div className="app">
+      <ShoppingCartProvider>
+        <DessertGrid />
         <AddToCart />
-      </div>
-    </ShoppingCartProvider>
+      </ShoppingCartProvider>
+    </div>
   );
 }
 

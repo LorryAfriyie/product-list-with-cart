@@ -13,6 +13,10 @@ export function ShoppingCartProvider({ children }) {
     return cartItems.find((item) => item.id === id)?.quantity || 0;
   }
 
+  function showID(id) {
+    console.log(`This is ${id}`);
+  }
+
   function increaseQuantity(id) {
     setCartItems((currentItem) => {
       if (currentItem.find((item) => item.id === id) == null || "") {
@@ -72,6 +76,7 @@ export function ShoppingCartProvider({ children }) {
         decreaseQuantity,
         addDessert,
         cartItems,
+        showID
       }}
     >
       {children}
