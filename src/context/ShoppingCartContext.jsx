@@ -10,59 +10,45 @@ export function ShoppingCartProvider({ children }) {
   const [cartItems, setCartItems] = useState([]);
 
   function getQuantity(id) {
-    return cartItems.find((item) => item.id === id)?.quantity || 0;
-  }
-
-  function showID(id) {
-    console.log(`This is ${id}`);
+    return cartItems.find((item) => item.id === id)?.quantity || 1;
   }
 
   function increaseQuantity(id) {
     setCartItems((currentItem) => {
-      if (currentItem.find((item) => item.id === id) == null || "") {
-        return [...cartItems, { id, quantity: 1 }];
-      } else {
-        return currentItem.map((item) => {
-          if (item.id === id) {
-            return { ...item, quantity: item.quantity + 1 };
-          } else {
-            return item;
-          }
-        });
-      }
+      return currentItem.map((item) => {
+        if (item.id === id) {
+          console.log(id);
+          return { ...item, quantity: item.quantity + 1 };
+        } else {
+          return item;
+        }
+      });
     });
   }
 
   function decreaseQuantity(id) {
     setCartItems((currentItem) => {
-      if (currentItem.find((item) => item.id === id)?.quantity === 0) {
-        return [...cartItems, { id, quantity: 0 }];
-      } else {
-        return currentItem.map((item) => {
-          if (item.id === id) {
-            return { ...item, quantity: item.quantity - 1 };
-          } else {
-            return item;
-          }
-        });
-      }
+      return currentItem.map((item) => {
+        if (item.id === id) {
+          return {
+            ...item,
+            quantity: item.quantity > 1 ? item.quantity - 1 : 1,
+          };
+        } else {
+          return item;
+        }
+      });
     });
   }
 
-  function addDessert(
-    dessertName,
-    dessertCategory,
-    dessertPrice,
-    dessertQuantity,
-    id,
-  ) {
+  function addDessert(dessertName, dessertCategory, dessertPrice, id) {
     setCartItems([
       ...cartItems,
       {
         name: dessertName,
         category: dessertCategory,
-        quantity: dessertQuantity,
         price: dessertPrice,
+        quantity: 1,
         id: id,
       },
     ]);
@@ -76,7 +62,6 @@ export function ShoppingCartProvider({ children }) {
         decreaseQuantity,
         addDessert,
         cartItems,
-        showID
       }}
     >
       {children}
