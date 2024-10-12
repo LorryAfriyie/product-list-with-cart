@@ -6,7 +6,7 @@ import { useShoppingCart } from "../context/ShoppingCartContext";
 
 function AddToCartBtn(props) {
   const { id, handleIsSubmit, name, category, price } = props;
-  const { addDessert } = useShoppingCart();
+  const { addDessert, removeItem } = useShoppingCart();
   const button = useRef(null);
 
   function test(id) {
@@ -15,6 +15,7 @@ function AddToCartBtn(props) {
   }
 
   useEffect(() => {
+    if (removeItem) console.log("remove item");
     button.current.addEventListener("click", () => {
       test(id);
     });

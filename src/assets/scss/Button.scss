@@ -33,7 +33,8 @@
         height: 16px;
         width: 16px;
         display: grid;
-        place-items: center;
+        place-content: center;
+        background: none;
       }
 
       .decrement:hover,
