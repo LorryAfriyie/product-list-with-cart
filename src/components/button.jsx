@@ -5,19 +5,13 @@ import decrease from "../assets/images/icon-decrement-quantity.svg";
 import { useShoppingCart } from "../context/ShoppingCartContext";
 
 function AddToCartBtn(props) {
-  const { id, handleIsSubmit, name, category, price } = props;
-  const { addDessert, removeItem } = useShoppingCart();
+  const { id, name, category, price } = props;
+  const { addDessert } = useShoppingCart();
   const button = useRef(null);
 
-  function test(id) {
-    handleIsSubmit(true);
-    addDessert(name, category, price, id);
-  }
-
   useEffect(() => {
-    if (removeItem) console.log("remove item");
     button.current.addEventListener("click", () => {
-      test(id);
+      addDessert(name, category, price, id);
     });
   });
 

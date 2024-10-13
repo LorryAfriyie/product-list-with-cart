@@ -11,7 +11,7 @@ export function ShoppingCartProvider({ children }) {
   const [removeItem, setRemoveItem] = useState(false);
 
   function getQuantity(id) {
-    return cartItems.find((item) => item.id === id)?.quantity || 1;
+    return cartItems.find((item) => item.id === id)?.quantity || 0;
   }
 
   function calculateDessertQuantityTotal(id) {
