@@ -70,4 +70,57 @@
   &__border-bottom {
     border-bottom: 1px solid var(--rose-100);
   }
+
+  &__total {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 1.5rem;
+
+    .total-display {
+      font-weight: 700;
+      font-size: 1.25rem;
+      color: var(--rose-900);
+    }
+  }
+
+  &__carbon {
+    display: flex;
+    place-content: center;
+    background-color: var(--rose-100);
+    border-radius: 5px;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    margin-top: 1rem;
+
+    small {
+      text-align: center;
+
+      span {
+        color: var(--rose-900);
+        font-weight: 700;
+      }
+    }
+
+    img {
+      padding-right: 0.5rem;
+    }
+  }
+
+  &__order-btn {
+    text-align: center;
+    margin-top: 1rem;
+
+    button {
+      width: 100%;
+      background: var(--clr-red);
+      color: var(--rose-50);
+      border: none;
+      padding: 0.75rem;
+      border-radius: 20px;
+    }
+
+    button:hover {
+      background: var(--rose-900);
+    }
+  }
 }

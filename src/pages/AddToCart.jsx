@@ -1,7 +1,9 @@
 import emptyCart from "../assets/images/illustration-empty-cart.svg";
 import closeBtn from "../assets/images/icon-remove-item.svg";
+import carbon from "../assets/images/icon-carbon-neutral.svg";
 import { useShoppingCart } from "../context/ShoppingCartContext";
 import { formatCurrency } from "../utilities/currencyFormat";
+import dessertItems from "../../data/data.json";
 
 export function AddToCart() {
   const { cartItems, calculateDessertQuantityTotal, removeDessert } =
@@ -37,8 +39,8 @@ export function AddToCart() {
                     {formatCurrency(calculateDessertQuantityTotal(items.id))}
                   </p>
                 </div>
-                <div className="cart__border-bottom"></div>
               </div>
+
               <div className="remove-dessert">
                 <button
                   className="cart__remove-item"
@@ -50,6 +52,40 @@ export function AddToCart() {
             </div>
           );
         })}
+
+        <div>
+          {cartItems.length > 0 && (
+            <div className="cart__total">
+              <span>Order Total</span>
+
+              <span className="total-display">
+                {formatCurrency(
+                  cartItems.reduce((total, cartItems) => {
+                    const dessert = dessertItems.find(
+                      (i) => i.name === cartItems.name,
+                    );
+                    return total + (dessert?.price || 0) * cartItems.quantity;
+                  }, 0),
+                )}
+              </span>
+            </div>
+          )}
+
+          {cartItems.length > 0 && (
+            <>
+              <div className="cart__carbon">
+                <img src={carbon} alt={carbon} />
+                <small>
+                  This is a <span>carbon-neutral</span> delivery
+                </small>
+              </div>
+
+              <div className="cart__order-btn">
+                <button>Confirm Order</button>
+              </div>
+            </>
+          )}
+        </div>
       </div>
     </div>
   );
