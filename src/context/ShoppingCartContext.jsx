@@ -1,4 +1,5 @@
 import { createContext, useContext, useState } from "react";
+import dessertItems from "../../data/data.json";
 
 const ShoppingCartContext = createContext({});
 
@@ -9,6 +10,8 @@ export function useShoppingCart() {
 export function ShoppingCartProvider({ children }) {
   const [cartItems, setCartItems] = useState([]);
   const [removeItem, setRemoveItem] = useState(false);
+  const [showModal, setShowModal] = useState(false);
+  const [total, setTotal] = useState(0);
 
   function getQuantity(id) {
     return cartItems.find((item) => item.id === id)?.quantity || 0;
@@ -45,12 +48,13 @@ export function ShoppingCartProvider({ children }) {
     });
   }
 
-  function addDessert(dessertName, dessertCategory, dessertPrice, id) {
+  function addDessert(dessertName, dessertCategory, dessertPrice, image, id) {
     setCartItems([
       {
         name: dessertName,
         category: dessertCategory,
         price: dessertPrice,
+        image: image,
         quantity: 1,
         id: id,
       },
@@ -65,6 +69,17 @@ export function ShoppingCartProvider({ children }) {
     });
   }
 
+  function cartTotal(cartItems) {
+    return cartItems.reduce((total, cartItem) => {
+      const dessert = dessertItems.find((item) => item.name === cartItem.name);
+      return total + (dessert?.price || 0) * cartItem.quantity;
+    }, 0);
+  }
+
+  function modalToggle(value) {
+    setShowModal(value);
+  }
+
   return (
     <ShoppingCartContext.Provider
       value={{
@@ -76,6 +91,10 @@ export function ShoppingCartProvider({ children }) {
         calculateDessertQuantityTotal,
         removeDessert,
         removeItem,
+        cartTotal,
+        modalToggle,
+        showModal,
+        total,
       }}
     >
       {children}

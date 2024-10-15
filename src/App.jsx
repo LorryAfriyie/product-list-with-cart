@@ -1,6 +1,7 @@
 import { DessertGrid } from "./pages/DessertGrid";
 import { AddToCart } from "./pages/AddToCart";
 import { ShoppingCartProvider } from "./context/ShoppingCartContext";
+import { Modal } from "./components/Modal";
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
       <ShoppingCartProvider>
         <DessertGrid />
         <AddToCart />
+        <Modal />
       </ShoppingCartProvider>
     </div>
   );

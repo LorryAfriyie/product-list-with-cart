@@ -3,11 +3,15 @@ import closeBtn from "../assets/images/icon-remove-item.svg";
 import carbon from "../assets/images/icon-carbon-neutral.svg";
 import { useShoppingCart } from "../context/ShoppingCartContext";
 import { formatCurrency } from "../utilities/currencyFormat";
-import dessertItems from "../../data/data.json";
 
 export function AddToCart() {
-  const { cartItems, calculateDessertQuantityTotal, removeDessert } =
-    useShoppingCart();
+  const {
+    cartItems,
+    calculateDessertQuantityTotal,
+    removeDessert,
+    cartTotal,
+    modalToggle,
+  } = useShoppingCart();
 
   return (
     <div className="cart">
@@ -59,14 +63,7 @@ export function AddToCart() {
               <span>Order Total</span>
 
               <span className="total-display">
-                {formatCurrency(
-                  cartItems.reduce((total, cartItems) => {
-                    const dessert = dessertItems.find(
-                      (i) => i.name === cartItems.name,
-                    );
-                    return total + (dessert?.price || 0) * cartItems.quantity;
-                  }, 0),
-                )}
+                {formatCurrency(cartTotal(cartItems))}
               </span>
             </div>
           )}
@@ -81,7 +78,7 @@ export function AddToCart() {
               </div>
 
               <div className="cart__order-btn">
-                <button>Confirm Order</button>
+                <button onClick={() => modalToggle(true)}>Confirm Order</button>
               </div>
             </>
           )}

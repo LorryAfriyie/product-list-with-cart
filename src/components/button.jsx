@@ -5,13 +5,13 @@ import decrease from "../assets/images/icon-decrement-quantity.svg";
 import { useShoppingCart } from "../context/ShoppingCartContext";
 
 function AddToCartBtn(props) {
-  const { id, name, category, price } = props;
+  const { id, name, category, price, image } = props;
   const { addDessert } = useShoppingCart();
   const button = useRef(null);
 
   useEffect(() => {
     button.current.addEventListener("click", () => {
-      addDessert(name, category, price, id);
+      addDessert(name, category, price, image, id);
     });
   });
 

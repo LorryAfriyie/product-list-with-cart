@@ -22,6 +22,7 @@ export function DessertCard(props) {
           name={name}
           category={category}
           price={price}
+          image={image}
         />
       )}
 

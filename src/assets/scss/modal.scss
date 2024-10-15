@@ -1,0 +1,82 @@
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 2;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+
+  &__content {
+    background-color: white;
+    margin: 2% auto;
+    padding: 2rem;
+    width: auto;
+    border-radius: 10px;
+    max-width: 450px;
+  }
+
+  &__heading {
+    margin-block-end: 0;
+    color: var(--rose-900);
+  }
+
+  &__sub-text {
+    margin-block-start: 0;
+    color: var(--rose-500);
+  }
+
+  &__dessert-list {
+    background-color: var(--rose-50);
+    padding: 1.25rem;
+
+    .dessert-items {
+      display: flex;
+      gap: 1rem;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+
+      .dessert-items-info {
+        display: flex;
+        gap: 1rem;
+
+        img {
+          max-width: 50px;
+          max-height: 50px;
+          border-radius: 5px;
+        }
+
+        .dessert-name {
+          margin-block-start: 0;
+          margin-block-end: 0;
+        }
+
+        .dessert {
+          margin-block-start: 0.5rem;
+          margin-block-end: 0;
+        }
+      }
+    }
+
+    .dessert-total {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .new-order-btn {
+      text-align: center;
+      margin-top: 1.5rem;
+
+      button {
+        width: 100%;
+        border: none;
+        background-color: var(--clr-red);
+        color: var(--rose-50);
+        padding: 0.75rem;
+        border-radius: 20px;
+      }
+    }
+  }
+}
