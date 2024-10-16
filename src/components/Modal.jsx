@@ -28,7 +28,11 @@ export function Modal() {
   return (
     <div className="modal" ref={modal}>
       <div className="modal__content">
-        <img src={orderConfirmed} alt={orderConfirmed} />
+        <img
+          src={orderConfirmed}
+          alt={orderConfirmed}
+          className="modal__confirm-order-img"
+        />
         <h1 className="modal__heading">Order Confirmed</h1>
         <p className="modal__sub-text">We hope you enjoy your food!</p>
 
@@ -40,24 +44,28 @@ export function Modal() {
                   <img src={x.image.desktop} alt={x.image} />
 
                   <div>
-                    <p className="dessert-name">{x.name}</p>
+                    <small className="dessert-name">{x.name}</small>
                     <p className="dessert">
-                      {x.quantity}{" "}
+                      {x.quantity}x{" "}
                       <span className="dessert-price">
-                        @ {formatCurrency(x.price)}
+                        @{formatCurrency(x.price)}
                       </span>
                     </p>
                   </div>
                 </div>
 
-                <p>{formatCurrency(calculateDessertQuantityTotal(x.id))}</p>
+                <p className="dessert-item-total">{formatCurrency(calculateDessertQuantityTotal(x.id))}</p>
               </div>
             );
           })}
 
           <div className="dessert-total">
-            <span>Order Total</span>
-            <span>{formatCurrency(cartTotal(cartItems))}</span>
+            <span>
+              <small>Order Total</small>
+            </span>
+            <span className="total-price">
+              {formatCurrency(cartTotal(cartItems))}
+            </span>
           </div>
 
           <div className="new-order-btn">
