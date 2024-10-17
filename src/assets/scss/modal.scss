@@ -43,10 +43,12 @@
       gap: 1rem;
       justify-content: space-between;
       margin-bottom: 1rem;
+      border-bottom: 1px solid var(--rose-100);
 
       .dessert-items-info {
         display: flex;
         gap: 1rem;
+        margin-bottom: 1.25rem;
 
         img {
           max-width: 50px;
@@ -103,6 +105,10 @@
         color: var(--rose-50);
         padding: 0.75rem;
         border-radius: 20px;
+      }
+
+      button:hover {
+        background: #952c0c;
       }
     }
   }

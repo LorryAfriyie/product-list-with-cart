@@ -10,9 +10,12 @@ export function DessertCard(props) {
 
   const quantity = getQuantity(id);
 
+ 
+
+
   return (
     <div className="dessert-card">
-      <DesertImage image={image} />
+      <DesertImage image={image} border={quantity} />
 
       {quantity > 0 ? (
         <QuantityButton id={id} />

@@ -40,6 +40,12 @@
       .decrement:hover,
       .increment:hover {
         background-color: var(--rose-50);
+
+        svg {
+          path {
+            fill: var(--clr-red);
+          }
+        }
       }
 
       img {

@@ -1,5 +1,4 @@
 import emptyCart from "../assets/images/illustration-empty-cart.svg";
-import closeBtn from "../assets/images/icon-remove-item.svg";
 import carbon from "../assets/images/icon-carbon-neutral.svg";
 import { useShoppingCart } from "../context/ShoppingCartContext";
 import { formatCurrency } from "../utilities/currencyFormat";
@@ -50,7 +49,18 @@ export function AddToCart() {
                   className="cart__remove-item"
                   onClick={() => removeDessert(items.id)}
                 >
-                  <img src={closeBtn} alt={closeBtn} />
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="10"
+                    height="10"
+                    fill="none"
+                    viewBox="0 0 10 10"
+                  >
+                    <path
+                      fill="#CAAFA7"
+                      d="M8.375 9.375 5 6 1.625 9.375l-1-1L4 5 .625 1.625l1-1L5 4 8.375.625l1 1L6 5l3.375 3.375-1 1Z"
+                    />
+                  </svg>
                 </button>
               </div>
             </div>

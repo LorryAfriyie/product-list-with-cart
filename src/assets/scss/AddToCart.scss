@@ -14,6 +14,7 @@
   &__cart-items {
     display: flex;
     justify-content: space-between;
+    border-bottom: 1px solid var(--rose-100);
 
     .remove-dessert {
       display: grid;
@@ -53,7 +54,7 @@
     border: none;
     background: none;
 
-    img {
+    svg {
       height: auto;
       width: 25px;
       border-radius: 50%;
@@ -61,9 +62,13 @@
       padding: 4px;
     }
 
-    img:hover {
+    svg:hover {
       border: 2px solid var(--rose-900);
       color: var(--rose-900);
+
+      path {
+        fill: var(--rose-900);
+      }
     }
   }
 

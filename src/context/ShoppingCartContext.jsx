@@ -62,6 +62,10 @@ export function ShoppingCartProvider({ children }) {
     ]);
   }
 
+  function clearDessert() {
+    setCartItems([]);
+  }
+
   function removeDessert(id) {
     setCartItems((cartItems) => {
       setRemoveItem(true);
@@ -95,6 +99,7 @@ export function ShoppingCartProvider({ children }) {
         modalToggle,
         showModal,
         total,
+        clearDessert,
       }}
     >
       {children}
