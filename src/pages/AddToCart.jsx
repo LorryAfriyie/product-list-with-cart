@@ -1,16 +1,14 @@
 import emptyCart from "../assets/images/illustration-empty-cart.svg";
 import carbon from "../assets/images/icon-carbon-neutral.svg";
 import { useShoppingCart } from "../context/ShoppingCartContext";
+import { useModal } from "../context/ModalContext";
 import { formatCurrency } from "../utilities/currencyFormat";
 
 export function AddToCart() {
-  const {
-    cartItems,
-    calculateDessertQuantityTotal,
-    removeDessert,
-    cartTotal,
-    modalToggle,
-  } = useShoppingCart();
+  const { cartItems, calculateDessertQuantityTotal, removeDessert, cartTotal } =
+    useShoppingCart();
+
+  const { modalToggle } = useModal();
 
   return (
     <div className="cart">

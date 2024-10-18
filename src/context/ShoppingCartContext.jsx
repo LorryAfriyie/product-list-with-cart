@@ -11,7 +11,6 @@ export function ShoppingCartProvider({ children }) {
   const [cartItems, setCartItems] = useState([]);
   const [removeItem, setRemoveItem] = useState(false);
   const [showModal, setShowModal] = useState(false);
-  const [total, setTotal] = useState(0);
 
   function getQuantity(id) {
     return cartItems.find((item) => item.id === id)?.quantity || 0;
@@ -98,7 +97,6 @@ export function ShoppingCartProvider({ children }) {
         cartTotal,
         modalToggle,
         showModal,
-        total,
         clearDessert,
       }}
     >

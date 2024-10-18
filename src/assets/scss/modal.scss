@@ -1,6 +1,7 @@
 .modal {
   display: none;
   position: fixed;
+  place-content: center;
   z-index: 2;
   left: 0;
   top: 0;
@@ -16,22 +17,42 @@
     width: auto;
     border-radius: 10px;
     max-width: 450px;
+    position: relative;
+
+    @media (max-width: 60em) {
+      position: absolute;
+      bottom: 0px;
+      margin: 0;
+      width: 100%;
+    }
   }
 
   &__confirm-order-img {
     height: auto;
     width: 35px;
+
+    @media (max-width: 60em) {
+      width: 70px;
+    }
   }
 
   &__heading {
     margin-block-end: 0;
     color: var(--rose-900);
+
+    @media (max-width: 60em) {
+      font-size: 3.5rem;
+    }
   }
 
   &__sub-text {
     margin-block-start: 0;
     margin-block-end: 1.75rem;
     color: var(--rose-500);
+
+    @media (max-width: 60em) {
+      font-size: 1.175rem;
+    }
   }
 
   &__dessert-list {
@@ -44,6 +65,10 @@
       justify-content: space-between;
       margin-bottom: 1rem;
       border-bottom: 1px solid var(--rose-100);
+
+      @media (max-width: 60em) {
+        overflow-y: scroll;
+      }
 
       .dessert-items-info {
         display: flex;
@@ -93,23 +118,23 @@
         color: var(--rose-900);
       }
     }
+  }
 
-    .new-order-btn {
-      text-align: center;
-      margin-top: 1.5rem;
+  .new-order-btn {
+    text-align: center;
+    margin-top: 1.5rem;
 
-      button {
-        width: 100%;
-        border: none;
-        background-color: var(--clr-red);
-        color: var(--rose-50);
-        padding: 0.75rem;
-        border-radius: 20px;
-      }
+    button {
+      width: 100%;
+      border: none;
+      background-color: var(--clr-red);
+      color: var(--rose-50);
+      padding: 1rem;
+      border-radius: 20px;
+    }
 
-      button:hover {
-        background: #952c0c;
-      }
+    button:hover {
+      background: #952c0c;
     }
   }
 }

@@ -1,12 +1,11 @@
 import { useEffect, useState } from "react";
-
 import { DessertCard } from "./DessertCard";
 
 export function DessertGrid() {
   const [jsonData, getJsonData] = useState([]);
 
   function getData() {
-    fetch("../data/data.json", {
+    fetch("data/data.json", {
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",

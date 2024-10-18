@@ -1,16 +1,13 @@
 import { useEffect, useRef } from "react";
 import { useShoppingCart } from "../context/ShoppingCartContext";
+import { useModal } from "../context/ModalContext";
 import { formatCurrency } from "../utilities/currencyFormat";
 
 export function Modal() {
-  const {
-    showModal,
-    modalToggle,
-    cartItems,
-    calculateDessertQuantityTotal,
-    cartTotal,
-    clearDessert,
-  } = useShoppingCart();
+  const { cartItems, calculateDessertQuantityTotal, cartTotal, clearDessert } =
+    useShoppingCart();
+
+  const { showModal, modalToggle } = useModal();
 
   const modal = useRef(null);
 
@@ -82,10 +79,10 @@ export function Modal() {
               {formatCurrency(cartTotal(cartItems))}
             </span>
           </div>
+        </div>
 
-          <div className="new-order-btn">
-            <button onClick={() => clearDessert()}>Start new order</button>
-          </div>
+        <div className="new-order-btn">
+          <button onClick={() => clearDessert()}>Start new order</button>
         </div>
       </div>
     </div>

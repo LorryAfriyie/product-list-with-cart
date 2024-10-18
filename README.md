@@ -46,7 +46,7 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 ### Links
 
 - Solution URL: [Repository URL](https://github.com/LorryAfriyie/product-list-with-cart)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [Live site URL](https://lorryafriyie.github.io/product-list-with-cart/)
 
 ## My process
 
@@ -60,20 +60,52 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
-
-To see how you can add code snippets, see below:
+The code below show is the implementation of a useContext component.
 
 ```js
-const proudOfThisFunc = () => {
-  console.log("🎉");
-};
+import { createContext, useContext, useState } from "react";
+
+const ModalContext = createContext({});
+
+export function useModal() {
+  return useContext(ModalContext);
+}
+
+export function ModalProvider({ children }) {
+  const [showModal, setShowModal] = useState(false);
+  function modalToggle(value) {
+    setShowModal(value);
+  }
+  return (
+    <ModalContext.Provider value={{ showModal, modalToggle }}>
+      {children}
+    </ModalContext.Provider>
+  );
+}
+```
+
+The code below shows to to allow the useContext component to consume a component that will be using the functions defined on the useContext component.
+
+```js
+import { ModalProvider } from "./context/ModalContext";
+import { Modal } from "./components/Modal";
+
+function App() {
+  return (
+    <div className="app">
+      <ModalProvider>
+        <Modal />
+      </ModalProvider>
+    </div>
+  );
+}
 ```
 
 ### Continued development
 
 - To be able to fully understand the utilize the use of useContext hook when the situation requires it. The useContext hook allows for global access of functions throughout a react application when the components are encapsulated within the context provider component of a useContext hook.
 
+- To learn how to create well performant web applications.
 
 ### Useful resources
 
