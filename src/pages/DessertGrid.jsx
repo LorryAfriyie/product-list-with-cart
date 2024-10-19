@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import { DessertCard } from "./DessertCard";
+import jsonData from "../data/data.json";
 
 export function DessertGrid() {
-  const [jsonData, getJsonData] = useState([]);
+  /* const [jsonData, getJsonData] = useState([]);
 
   function getData() {
     fetch("data/data.json", {
@@ -21,7 +22,7 @@ export function DessertGrid() {
 
   useEffect(() => {
     getData();
-  }, []);
+  }, []); */
 
   return (
     <div className="dessert-grid">

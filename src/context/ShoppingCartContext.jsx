@@ -1,5 +1,5 @@
 import { createContext, useContext, useState } from "react";
-import dessertItems from "../../data/data.json";
+import dessertItems from "../data/data.json";
 
 const ShoppingCartContext = createContext({});
 
