@@ -41,7 +41,7 @@
     color: var(--rose-900);
 
     @media (max-width: 40em) {
-      font-size: 3.5rem;
+      font-size: 3.25rem;
     }
   }
 
@@ -60,7 +60,7 @@
     padding: 1.25rem;
     border-radius: 10px;
     overflow: auto;
-    height: 250px;
+    height: 300px;
 
     @media (max-width: 40em) {
       height: 200px;
