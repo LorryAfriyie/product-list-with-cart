@@ -7,15 +7,13 @@ function AddToCartBtn(props) {
   const { addDessert } = useShoppingCart();
   const button = useRef(null);
 
-  useEffect(() => {
-    button.current.addEventListener("click", () => {
-      addDessert(name, category, price, image, id);
-    });
-  });
-
   return (
     <div className="cart-btn-container">
-      <button className="cart-btn" ref={button}>
+      <button
+        className="cart-btn"
+        ref={button}
+        onClick={() => addDessert(name, category, price, image, id)}
+      >
         <span className="icon">
           <img src={cart} alt={cart} />
         </span>
