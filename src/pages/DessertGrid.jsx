@@ -1,28 +1,7 @@
-import { useEffect, useState } from "react";
 import { DessertCard } from "./DessertCard";
 import jsonData from "../data/data.json";
 
 export function DessertGrid() {
-  /* const [jsonData, getJsonData] = useState([]);
-
-  function getData() {
-    fetch("data/data.json", {
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-    })
-      .then(function (res) {
-        return res.json();
-      })
-      .then(function (res) {
-        getJsonData(res);
-      });
-  }
-
-  useEffect(() => {
-    getData();
-  }, []); */
 
   return (
     <div className="dessert-grid">
