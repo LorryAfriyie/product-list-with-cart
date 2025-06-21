@@ -35,19 +35,19 @@ Users should be able to:
 
 Below are screenshots of the desktop version of the website displaying the different types of interactive states:
 
-- [1 Desktop - Empty cart](./public/screenshots/desktop-empty-cart-state.png)
+- ![1 Desktop - Empty cart](./public/screenshots/desktop-empty-cart-state.png)
 
-- [2 Desktop - Active cart](./public/screenshots/desktop-active-cart-state.png)
+- ![2 Desktop - Active cart](./public/screenshots/desktop-active-cart-state.png)
 
-- [3 Desktop - Order confirmation](./public/screenshots/desktop-order-confirmation-state.png)
+- ![3 Desktop - Order confirmation](./public/screenshots/desktop-order-confirmation-state.png)
 
 Below are screenshots of the mobile version of the website displaying the different types of interactive states:
 
-- [1 Mobile - Empty cart](./public/screenshots/mobile-empty-cart-state.png)
+- ![1 Mobile - Empty cart](./public/screenshots/mobile-empty-cart-state.png)
 
-- [2 Mobile - Active cart](./public/screenshots/mobile-active-cart-state.png)
+- ![2 Mobile - Active cart](./public/screenshots/mobile-active-cart-state.png)
 
-- [3 Mobile - Order confirmation](./public/screenshots/mobile-order-confirmation-state.png)
+- ![3 Mobile - Order confirmation](./public/screenshots/mobile-order-confirmation-state.png)
 
 ### Links
 
