@@ -68,7 +68,7 @@ export function ShoppingCartProvider({ children }) {
   function removeDessert(id) {
     setCartItems((cartItems) => {
       setRemoveItem(true);
-      return cartItems.filter((item) => item.id != id);
+      return cartItems.filter((item) => item.id !== id);
     });
   }
 
